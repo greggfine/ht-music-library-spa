@@ -4,6 +4,7 @@ import "./Wave.styles.scss";
 let waveformContainerPromise;
 
 const Wave = ({ currentTrack }) => {
+  const [paused, togglePause] = useState(true);
   useEffect(() => {
     const createWaveformContainer = async () => {
       const waveformContainer = await WaveSurfer.create({
@@ -25,22 +26,26 @@ const Wave = ({ currentTrack }) => {
     const loadTrackIntoWaveform = async () => {
       const waveform = await waveformContainerPromise;
       await waveform.load(`/audio/${currentTrack}`);
-      waveform.on("ready", function() {
-        waveform.play();
-      });
     };
     loadTrackIntoWaveform();
   }, [currentTrack]);
 
+  const handlePlayPause = async () => {
+    const waveform = await waveformContainerPromise;
+    await togglePause(!paused);
+    paused ? waveform.play() : waveform.pause();
+  };
+
   return (
     <div className="Wave">
       <div id="waveform"></div>
+      <button onClick={handlePlayPause}>Play/Pause</button>
       <a
         href={`/audio/${currentTrack}`}
         id="downloader"
         download={currentTrack}
       >
-        <i class="fa fa-download fa-4x download-icon"></i>
+        <i className="fa fa-download fa-4x download-icon"></i>
       </a>
     </div>
   );

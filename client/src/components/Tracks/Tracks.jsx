@@ -8,9 +8,9 @@ import Wave from "../Wave/Wave";
 
 export default function Tracks({ subcategoryTracks }) {
   const [currentTrack, setCurrentTrack] = useState(
-    // "Fireside_HiddenTigerMusic.mp3"
-    ""
+    "Fireside_HiddenTigerMusic.mp3"
   );
+
   const columns = [
     {
       dataField: "filename",
@@ -29,28 +29,34 @@ export default function Tracks({ subcategoryTracks }) {
   ];
   const rowEvents = {
     onClick: (e, row, rowIndex) => {
-      console.log(row.filename);
       setCurrentTrack(`${row.filename}_HiddenTigerMusic.mp3`);
     }
   };
+
   const firstTenSubcategoryTracks = subcategoryTracks
     .filter((track, idx) => idx < 10)
     .map(track => {
       return {
         ...track,
-        //DOES THIS TAKE AWAY the extension when people download???
-        // IF SO, might have to add a new property to database
         filename: track.filename.replace(/_HiddenTigerMusic.mp3/, "")
       };
     });
+
+  const selectRow = {
+    mode: "radio",
+    clickToSelect: true
+  };
+
   return (
     <>
       <Wave currentTrack={currentTrack} />
       <BootstrapTable
-        keyField="id"
+        hover
+        keyField="_id"
         data={firstTenSubcategoryTracks}
         columns={columns}
         rowEvents={rowEvents}
+        selectRow={selectRow}
       />
     </>
   );
