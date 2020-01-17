@@ -25,7 +25,13 @@
   .btn-pause {
     border: 2px solid;
     background-color: #fff;
+    margin-left: 20px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
+  .btn-stop {
     &:hover {
       cursor: pointer;
     }
@@ -33,10 +39,33 @@
 
   .controls {
     display: flex;
-    padding: 20px;
-    box-shadow: 7px 8px 0px 0px#00000047;
-    background-color: var(--tan);
-    position: relative;
+    align-items: center;
+    // justify-content: flex-start;
+    margin-top: 20px;
     width: 400px;
+    padding: 5px 20px;
+    box-shadow: 3px 5px 4px 0px#00000047;
+    background-color: var(--tan);
+  }
+
+  .controls-badge-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .results-badge {
+    margin-top: 25px;
+    border: 1px solid #000;
+    float: right;
+    padding: 10px;
+  }
+
+  .current-track-title {
+    margin-top: 20px;
+    font-weight: 700;
+    color: #a3ff41;
+    padding: 10px 40px;
+    letter-spacing: 2px;
   }
 }

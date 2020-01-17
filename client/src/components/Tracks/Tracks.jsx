@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Track from "../Track/Track";
 import "./Tracks.styles.scss";
 import ListGroup from "react-bootstrap/ListGroup";
-import Badge from "react-bootstrap/Badge";
 import BootstrapTable from "react-bootstrap-table-next";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import Wave from "../Wave/Wave";
@@ -60,10 +59,7 @@ export default function Tracks({ subcategoryTracks }) {
 
   return (
     <>
-      <Wave currentTrack={currentTrack} />
-      <h4>
-        <Badge variant="primary">{subcategoryTracks.length} Results</Badge>
-      </h4>
+      <Wave currentTrack={currentTrack} subcategoryTracks={subcategoryTracks} />
 
       <BootstrapTable
         hover
@@ -72,6 +68,7 @@ export default function Tracks({ subcategoryTracks }) {
         columns={columns}
         rowEvents={rowEvents}
         selectRow={selectRow}
+        className="table"
       />
     </>
   );

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Subcategories from "../Subcategories/Subcategories";
 import "./MainCategories.styles.scss";
 import TracksHOC from "../TracksHOC";
+import FilterList from "../FilterList/FilterList";
 
 const MainCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -36,7 +37,7 @@ const MainCategories = () => {
       }
     >
       <p>{category.mainCategoryName}</p>
-      <p className={`${category.icon}`}></p>
+      <p className={`${category.icon} icon`}></p>
     </li>
   ));
   return (
@@ -47,6 +48,7 @@ const MainCategories = () => {
         categories={categories}
         handleSetCurrentSubcategory={handleSetCurrentSubcategory}
       />
+      <FilterList currentSubcategory={currentSubcategory} />
       <TracksHOC currentSubcategory={currentSubcategory} />
     </>
   );

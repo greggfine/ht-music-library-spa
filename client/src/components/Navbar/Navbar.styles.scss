@@ -1,8 +1,10 @@
 .NavBar {
-  height: 70px;
-  background-color: grey;
+  padding-bottom: 0 !important;
+  .NavBar-logo {
+    margin-left: 100px;
+  }
 
-  img {
-    width: 75px;
+  .NavBar-form {
+    margin-right: 100px;
   }
 }

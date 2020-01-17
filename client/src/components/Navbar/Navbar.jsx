@@ -10,13 +10,13 @@ import htlogo from "./img/ht-logo.png";
 
 export default function NavBar() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="NavBar">
       <Navbar.Brand href="#home">
         <img
           src={htlogo}
-          width="60"
-          height="60"
-          className="d-inline-block align-top"
+          width="120"
+          height="120"
+          className="d-inline-block align-top NavBar-logo"
           alt="React Bootstrap logo"
         />
       </Navbar.Brand>
@@ -37,7 +37,7 @@ export default function NavBar() {
             </NavDropdown.Item>
           </NavDropdown> */}
         </Nav>
-        <Form inline>
+        <Form inline className="NavBar-form">
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
         </Form>

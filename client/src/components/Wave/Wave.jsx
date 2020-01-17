@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Badge from "react-bootstrap/Badge";
 import WaveSurfer from "wavesurfer.js";
 import "./Wave.styles.scss";
 let waveformContainerPromise;
 
-const Wave = ({ currentTrack }) => {
+const Wave = ({ currentTrack, subcategoryTracks }) => {
   const [paused, togglePause] = useState(true);
   useEffect(() => {
     const createWaveformContainer = async () => {
@@ -12,7 +13,7 @@ const Wave = ({ currentTrack }) => {
         progressColor: "rgb(68,89,66)",
         waveColor: "grey",
         cursorColor: "#999999",
-        height: 94,
+        height: 74,
         pixelRatio: 1,
         responsive: true
         // hideScrollbar: true
@@ -47,29 +48,37 @@ const Wave = ({ currentTrack }) => {
   return (
     <div className="Wave">
       <div id="waveform" className="waveform"></div>
-      <div className="controls">
-        <i
-          className={
-            paused ? "fa fa-play fa-4x btn-play" : "fa fa-pause fa-4x btn-pause"
-          }
-          disabled="disabled"
-          onClick={handlePlayPause}
-        ></i>
+      <h3>
+        <Badge className="current-track-title" variant="dark">
+          {currentTrack.replace(/_HiddenTigerMusic.mp3/, "")}
+        </Badge>
+      </h3>
+      <div className="controls-badge-wrapper">
+        <div className="controls">
+          <i
+            className={
+              paused
+                ? "fa fa-play fa-4x btn-play"
+                : "fa fa-pause fa-4x btn-pause"
+            }
+            onClick={handlePlayPause}
+          ></i>
 
-        <i
-          className="fa fa-stop fa-4x"
-          id="btn-stop"
-          disabled="disabled"
-          onClick={handleStop}
-        ></i>
+          <i className="fa fa-stop fa-4x btn-stop" onClick={handleStop}></i>
 
-        <a
-          href={`/audio/${currentTrack}`}
-          id="downloader"
-          download={currentTrack}
-        >
-          <i className="fa fa-download fa-4x download-icon"></i>
-        </a>
+          <a
+            href={`/audio/${currentTrack}`}
+            id="downloader"
+            download={currentTrack}
+          >
+            <i className="fa fa-download fa-4x download-icon"></i>
+          </a>
+        </div>
+        <h4>
+          <Badge className="results-badge" variant="info">
+            {subcategoryTracks.length} Results
+          </Badge>
+        </h4>
       </div>
     </div>
   );
