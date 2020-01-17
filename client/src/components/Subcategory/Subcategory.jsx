@@ -2,6 +2,8 @@ import React from "react";
 import "./Subcategory.styles.scss";
 import Types from "../Types/Types";
 import useToggleState from "../../hooks/useToggleState";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 const Subcategory = ({
   subcategoryName,
@@ -10,7 +12,12 @@ const Subcategory = ({
   handleSetCurrentSubcategory
 }) => {
   const [showMoreBtn, toggleShowMoreBtn] = useToggleState();
-  const [showTypes, toggleShowTypes] = useToggleState();
+  const [show, setShow] = useToggleState();
+  const handleClose = () => {
+    setShow(false);
+    toggleShowMoreBtn();
+  };
+  const handleShow = () => setShow(true);
 
   const handleSubcategoryClick = subcategoryName => {
     toggleShowMoreBtn();
@@ -28,15 +35,27 @@ const Subcategory = ({
         </li>
         {showMoreBtn && (
           <>
-            <button onClick={() => toggleShowTypes()} className="show-more">
+            <button onClick={handleShow} className="btn btn-success">
               Show more...
             </button>
-            {showTypes && (
-              <Types
-                categories={categories}
-                currentMainCategory={currentMainCategory}
-                currentSubcategory={subcategoryName}
-              />
+            {show && (
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Select subcategories...</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <Types
+                    categories={categories}
+                    currentMainCategory={currentMainCategory}
+                    currentSubcategory={subcategoryName}
+                  />
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="primary" onClick={handleClose}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
             )}
           </>
         )}

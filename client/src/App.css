@@ -6,6 +6,22 @@ html {
   --red: rgb(179, 34, 48);
 }
 
+body {
+}
+
 .Container {
-  /* border: 1px solid #000; */
+  background-color: rgba(255, 255, 255, 0.96);
+  margin-top: 40px;
+}
+
+#root {
+  background-color: hsl(437, 90%, 36%);
+  background-size: 3360px 1932px;
+  background-image: url("/ht-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-color: #61892f;
+  background-blend-mode: screen;
+  height: 100vh;
 }

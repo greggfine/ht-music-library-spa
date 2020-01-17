@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Track from "../Track/Track";
 import "./Tracks.styles.scss";
 import ListGroup from "react-bootstrap/ListGroup";
+import Badge from "react-bootstrap/Badge";
 import BootstrapTable from "react-bootstrap-table-next";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import Wave from "../Wave/Wave";
@@ -15,16 +16,26 @@ export default function Tracks({ subcategoryTracks }) {
     {
       dataField: "filename",
       text: "Track Name",
-      sort: true
+      sort: true,
+      style: { color: "rgb(179, 34, 48)", fontWeight: "700" },
+      headerStyle: { backgroundColor: "lightgrey" }
     },
     {
       dataField: "metadata.description",
-      text: "Description"
+      text: "Description",
+      headerStyle: { backgroundColor: "lightgrey" }
+    },
+    {
+      dataField: "metadata.bpm",
+      text: "BPM",
+      sort: true,
+      headerStyle: { backgroundColor: "lightgrey" }
     },
     {
       dataField: "metadata.length",
       text: "Length",
-      sort: true
+      sort: true,
+      headerStyle: { backgroundColor: "lightgrey" }
     }
   ];
   const rowEvents = {
@@ -50,6 +61,10 @@ export default function Tracks({ subcategoryTracks }) {
   return (
     <>
       <Wave currentTrack={currentTrack} />
+      <h4>
+        <Badge variant="primary">{subcategoryTracks.length} Results</Badge>
+      </h4>
+
       <BootstrapTable
         hover
         keyField="_id"

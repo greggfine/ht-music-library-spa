@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./components/Navbar/Navbar";
+import NavBar from "./components/NavBar/NavBar";
 import MainCategories from "./components/MainCategories/MainCategories";
 import "./App.css";
 import Container from "react-bootstrap/Container";
@@ -7,9 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => (
   <>
-    <Container className="Container">
-      <Navbar />
-
+    <NavBar />
+    <Container className="Container fluid">
       <MainCategories />
     </Container>
   </>

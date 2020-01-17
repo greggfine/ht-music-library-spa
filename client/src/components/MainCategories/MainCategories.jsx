@@ -21,8 +21,20 @@ const MainCategories = () => {
     setCurrentSubcategory(currSubCat);
   };
 
+  const handleSetMainCategory = category => {
+    setMainCategory(category.mainCategoryName);
+  };
+
   const mainCategoryList = categories.map((category, idx) => (
-    <li key={idx} onClick={() => setMainCategory(category.mainCategoryName)}>
+    <li
+      key={idx}
+      onClick={() => handleSetMainCategory(category)}
+      style={
+        category.mainCategoryName === mainCategory
+          ? { backgroundColor: "rgb(218, 210, 186)" }
+          : { backgroundColor: "" }
+      }
+    >
       <p>{category.mainCategoryName}</p>
       <p className={`${category.icon}`}></p>
     </li>
