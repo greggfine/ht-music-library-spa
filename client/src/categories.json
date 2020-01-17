@@ -1,0 +1,57 @@
+// [
+//   {
+//     "mainCategoryName": "genre",
+//     "icon": "fas fa-music",
+//     "subcategories": [
+//       {
+//         "subcategoryName": "jazz",
+//         "subcategoryTypes": ["cool", "bebop", "hard bop"]
+//       },
+//       {
+//         "subcategoryName": "rock",
+//         "subcategoryTypes": ["hard", "heavy", "soft"]
+//       }
+//     ]
+//   },
+//   {
+//     "mainCategoryName": "mood",
+//     "icon": "far fa-smile",
+//     "subcategories": [
+//       { "subcategoryName": "sad", "subcategoryTypes": [] },
+//       { "subcategoryName": "happy", "subcategoryTypes": [] }
+//     ]
+//   },
+//   {
+//     "mainCategoryName": "tempo",
+//     "icon": "fas fa-drum",
+//     "subcategories": [
+//       { "subcategoryName": "slow" },
+//       { "subcategoryName": "medium" },
+//       { "subcategoryName": "fast" }
+//     ]
+//   },
+//   {
+//     "mainCategoryName": "length",
+//     "icon": "fas fa-ruler-horizontal",
+//     "subcategories": [
+//       { "subcategoryName": "30", "subcategoryTypes": [] },
+//       { "subcategoryName": "60", "subcategoryTypes": [] }
+//     ]
+//   },
+//   {
+//     "mainCategoryName": "instruments",
+//     "icon": "fas fa-guitar",
+//     "subcategories": [
+//       { "subcategoryName": "guitar", "subcategoryTypes": [] },
+//       { "subcategoryName": "piano", "subcategoryTypes": [] }
+//     ]
+//   },
+//   {
+//     "mainCategoryName": "scenario",
+//     "icon": "fas fa-home",
+//     "subcategories": [
+//       { "subcategoryName": "adventure", "subcategoryTypes": [] },
+//       { "subcategoryName": "drama", "subcategoryTypes": [] }
+//     ]
+//   }
+// ]

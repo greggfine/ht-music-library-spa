@@ -1,0 +1,11 @@
+html {
+  --green1: rgb(195, 211, 178);
+  --green2: rgb(161, 184, 141);
+  --green3: rgb(68, 89, 66);
+  --tan: rgb(218, 210, 186);
+  --red: rgb(179, 34, 48);
+}
+
+.Container {
+  /* border: 1px solid #000; */
+}

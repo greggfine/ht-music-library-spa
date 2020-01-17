@@ -1,0 +1,23 @@
+.Subcategory {
+  display: flex;
+  flex-direction: column;
+  .Subcategory-item {
+    border: 1px solid #000;
+    padding: 20px;
+    margin-right: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .show-more {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.track-list {
+  //   display: flex;
+}

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Track> renders 1`] = `
+<DocumentFragment>
+  <li
+    class="MuiListItem-root MuiListItem-gutters"
+  >
+    <audio
+      controls=""
+      src="audio/undefined"
+    />
+  </li>
+</DocumentFragment>
+`;

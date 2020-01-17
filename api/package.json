@@ -1,0 +1,21 @@
+{
+  "name": "ht-music-library-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "env-cmd ./config/dev.env nodemon index.js",
+    "client": "npm run start --prefix ../client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Gregg Fine",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.0.2",
+    "env-cmd": "^8.0.2",
+    "express": "^4.17.1",
+    "gridfs-stream": "^1.1.1",
+    "mongoose": "^5.8.6"
+  }
+}
