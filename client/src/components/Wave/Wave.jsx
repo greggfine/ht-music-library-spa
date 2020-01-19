@@ -35,6 +35,12 @@ const Wave = ({ currentTrack, subcategoryTracks }) => {
     paused ? togglePause(paused) : togglePause(!paused);
   };
 
+  const handleSetVolume = async e => {
+    e.persist();
+    let waveform = await waveformContainerPromise;
+    waveform.setVolume(e.target.value);
+  };
+
   return (
     <div className="Wave">
       <div id="waveform" className="waveform"></div>
@@ -49,6 +55,7 @@ const Wave = ({ currentTrack, subcategoryTracks }) => {
         handleStop={handleStop}
         currentTrack={currentTrack}
         subcategoryTracks={subcategoryTracks}
+        handleSetVolume={handleSetVolume}
       />
     </div>
   );

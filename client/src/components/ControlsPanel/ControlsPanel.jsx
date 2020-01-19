@@ -1,15 +1,19 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
+import Volume from "../Volume/Volume";
 
 export default function ControlsPanel({
   paused,
   handlePlayPause,
   handleStop,
   currentTrack,
-  subcategoryTracks
+  subcategoryTracks,
+  handleSetVolume
 }) {
   return (
     <div className="controls-badge-wrapper">
+      {/* NEED TO DISABLE CONTROL PANEL WHILE
+        AUDIO FILE IS LOADING!!!!!!! */}
       <div className="controls">
         <i
           className={
@@ -28,6 +32,7 @@ export default function ControlsPanel({
           <i className="fa fa-download fa-4x download-icon"></i>
         </a>
       </div>
+      <Volume handleSetVolume={handleSetVolume} />
       <h4>
         <Badge className="results-badge" variant="info">
           {subcategoryTracks.length} Results
