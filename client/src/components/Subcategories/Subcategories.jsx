@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import Subcategory from "../Subcategory/Subcategory";
 import "./Subcategories.styles.scss";
+import { CategoriesCtx } from "../CategoriesProvider";
 
 const Subcategories = ({
   currentMainCategory,
-  categories,
   handleSetCurrentSubcategory
 }) => {
-  const subcategoryList = categories.map(category => {
+  const categoriesCtx = useContext(CategoriesCtx);
+  const subcategoryList = categoriesCtx.categories.map(category => {
     if (category.mainCategoryName === currentMainCategory) {
       return category.subcategories.map((subcategory, idx) => (
         <Subcategory
           key={idx}
           subcategoryName={subcategory.subcategoryName}
-          categories={categories}
           currentMainCategory={currentMainCategory}
           handleSetCurrentSubcategory={handleSetCurrentSubcategory}
         />

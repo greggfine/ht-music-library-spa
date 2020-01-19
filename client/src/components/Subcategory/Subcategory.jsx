@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 
 const Subcategory = ({
   subcategoryName,
-  categories,
   currentMainCategory,
   handleSetCurrentSubcategory
 }) => {
@@ -44,11 +43,7 @@ const Subcategory = ({
                   <Modal.Title>Select subcategories...</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <Types
-                    categories={categories}
-                    currentMainCategory={currentMainCategory}
-                    currentSubcategory={subcategoryName}
-                  />
+                  <Types currentMainCategory={currentMainCategory} />
                 </Modal.Body>
                 <Modal.Footer>
                   <Button variant="primary" onClick={handleClose}>

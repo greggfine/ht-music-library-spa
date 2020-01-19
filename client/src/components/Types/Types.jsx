@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CategoriesCtx } from "../CategoriesProvider";
 
-const Types = ({ categories, currentMainCategory, currentSubcategory }) => {
-  const currentMainCategoryObj = categories.find(category => {
+const Types = ({ currentMainCategory }) => {
+  const categoriesCtx = useContext(CategoriesCtx);
+
+  const currentMainCategoryObj = categoriesCtx.categories.find(category => {
     return category.mainCategoryName === currentMainCategory;
   });
   const currentSubcategoryObj = currentMainCategoryObj.subcategories.find(
-    subcategory => subcategory.subcategoryName === currentSubcategory
+    subcategory =>
+      subcategory.subcategoryName === categoriesCtx.currentSubcategory
   );
   const typesList = currentSubcategoryObj.subcategoryTypes.map((type, idx) => {
     return <li key={idx}>{type}</li>;
