@@ -21,11 +21,10 @@ const MainCategories = () => {
     <li
       key={idx}
       onClick={() => handleSetMainCategory(category)}
-      style={
-        category.mainCategoryName === mainCategory
-          ? { backgroundColor: "rgb(218, 210, 186)" }
-          : { backgroundColor: "" }
-      }
+      style={{
+        backgroundColor:
+          category.mainCategoryName === mainCategory ? "rgb(218, 210, 186)" : ""
+      }}
     >
       <p>{category.mainCategoryName}</p>
       <p className={`${category.icon} icon`}></p>

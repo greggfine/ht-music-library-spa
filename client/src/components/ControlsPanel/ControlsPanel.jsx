@@ -1,6 +1,7 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
 import Volume from "../Volume/Volume";
+import "./ControlsPanel.styles.scss";
 
 export default function ControlsPanel({
   paused,

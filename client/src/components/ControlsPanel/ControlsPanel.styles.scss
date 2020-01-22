@@ -1,0 +1,45 @@
+.badge-controlpanel-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 400px;
+  //   padding: 5px 20px;
+  box-shadow: 3px 5px 4px 0px#00000047;
+  background-color: var(--tan);
+  margin-right: 60px;
+}
+
+.controls-badge-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-play,
+.btn-pause {
+  border: 2px solid;
+  background-color: #fff;
+  //   margin-left: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-stop {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.results-badge {
+  margin-top: 25px;
+  border: 1px solid #000;
+  float: right;
+  padding: 10px;
+}

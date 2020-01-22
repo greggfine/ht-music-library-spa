@@ -13,7 +13,7 @@ const TracksHOC = () => {
       setTracks(tracksJSON);
     };
     fetchTracks();
-  }, [tracks]);
+  }, [categoriesCtx.currentSubcategory]);
 
   return tracks ? <Tracks subcategoryTracks={tracks} /> : "Loading...";
 };

@@ -3,7 +3,7 @@ export default {
   progressColor: "rgb(68,89,66)",
   waveColor: "grey",
   cursorColor: "#999999",
-  height: 74,
+  height: 54,
   pixelRatio: 1,
   responsive: true
 };

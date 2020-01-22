@@ -1,11 +1,53 @@
 .Tracks {
+  border: 10px solid #000;
 }
 
 .table {
   margin-top: 60px;
 }
+
+.table-container {
+  overflow: scroll;
+  max-height: 650px;
+}
 // .table-hover {
 //   &:hover {
 //     background-color: red;
 //   }
+// }
+
+// table tbody,
+// table thead {
+//   display: block;
+// }
+// table tbody {
+//   overflow: auto;
+//   height: 400px;
+// }
+
+// table {
+//   border-collapse: collapse;
+//   width: 300px;
+//   overflow-x: scroll;
+//   display: block;
+// }
+// thead {
+//   background-color: #efefef;
+// }
+// thead,
+// tbody {
+//   display: block;
+// }
+// tbody {
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+//   height: 140px;
+// }
+// td,
+// th {
+//   min-width: 100px;
+//   height: 25px;
+//   border: dashed 1px lightblue;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
 // }

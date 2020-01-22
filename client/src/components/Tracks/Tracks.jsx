@@ -17,7 +17,7 @@ export default function Tracks({ subcategoryTracks }) {
   };
 
   const firstTenSubcategoryTracks = subcategoryTracks
-    .filter((track, idx) => idx < 10)
+    // .filter((track, idx) => idx < 10)
     .map(track => {
       return {
         ...track,
@@ -31,15 +31,17 @@ export default function Tracks({ subcategoryTracks }) {
     <>
       <Wave currentTrack={currentTrack} subcategoryTracks={subcategoryTracks} />
 
-      <BootstrapTable
-        hover
-        keyField="_id"
-        data={firstTenSubcategoryTracks}
-        columns={columns}
-        rowEvents={rowEvents}
-        selectRow={selectRow}
-        className="table"
-      />
+      <div className="table-container">
+        <BootstrapTable
+          hover
+          keyField="_id"
+          data={firstTenSubcategoryTracks}
+          columns={columns}
+          rowEvents={rowEvents}
+          selectRow={selectRow}
+          className="table"
+        />
+      </div>
     </>
   );
 }
