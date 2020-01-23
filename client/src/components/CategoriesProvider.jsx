@@ -4,7 +4,8 @@ export const CategoriesCtx = createContext();
 
 export const CategoriesProvider = props => {
   const [categories, setCategories] = useState([]);
-  const [currentSubcategory, setCurrentSubcategory] = useState("jazz");
+  //   const [currentSubcategory, setCurrentSubcategory] = useState("jazz")
+  const [currentSubcategoryArr, setCurrentSubcategoryArr] = useState([]);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -14,9 +15,12 @@ export const CategoriesProvider = props => {
     };
     fetchCategories();
   }, []);
+
+  //   console.log(currentSubcategoryArr);
   return (
     <CategoriesCtx.Provider
-      value={{ categories, currentSubcategory, setCurrentSubcategory }}
+      //   value={{ categories, currentSubcategory, setCurrentSubcategory }}
+      value={{ categories, currentSubcategoryArr, setCurrentSubcategoryArr }}
     >
       {props.children}
     </CategoriesCtx.Provider>

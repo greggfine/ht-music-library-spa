@@ -8,12 +8,19 @@ const TracksHOC = () => {
 
   useEffect(() => {
     const fetchTracks = async () => {
-      const tracks = await fetch(`/tracks/${categoriesCtx.currentSubcategory}`);
+      let tracks;
+      const URL = categoriesCtx.currentSubcategoryArr.reduce((accum, genre) => {
+        return `${accum}${genre}&`;
+      }, "");
+      const removeLastAmpersandURL = URL.slice(0, URL.length - 1);
+      !removeLastAmpersandURL
+        ? (tracks = await fetch(`/tracks/jazz`))
+        : (tracks = await fetch(`/tracks/${removeLastAmpersandURL}`));
       const tracksJSON = await tracks.json();
       setTracks(tracksJSON);
     };
     fetchTracks();
-  }, [categoriesCtx.currentSubcategory]);
+  }, [categoriesCtx.currentSubcategoryArr]);
 
   return tracks ? <Tracks subcategoryTracks={tracks} /> : "Loading...";
 };

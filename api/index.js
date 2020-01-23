@@ -17,9 +17,14 @@ conn.once("open", () => {
 app.use("/categories", Categories);
 
 app.get("/tracks/:genre", (req, res) => {
+  const genreArray = req.params.genre.split("&");
+  console.log(genreArray);
   gfs.files
-    .find({ "metadata.genre": req.params.genre })
+    // .find({ "metadata.genre": req.params.genre })
+    // .find({ "metadata.subGenres": { $all: ["rock", "electronic"] } })
+    .find({ "metadata.subGenres": { $all: genreArray } })
     .toArray((err, files) => {
+      console.log(files);
       res.json(files);
     });
 });

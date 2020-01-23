@@ -10,7 +10,19 @@ const MainCategories = () => {
   const categoriesCtx = useContext(CategoriesCtx);
 
   const handleSetCurrentSubcategory = currSubCat => {
-    categoriesCtx.setCurrentSubcategory(currSubCat);
+    // categoriesCtx.setCurrentSubcategory(currSubCat);
+    if (categoriesCtx.currentSubcategoryArr.includes(currSubCat)) {
+      const filteredArr = categoriesCtx.currentSubcategoryArr.filter(genre => {
+        return genre !== currSubCat;
+      });
+      //   console.log("FILTERED", filteredArr);
+      categoriesCtx.setCurrentSubcategoryArr(filteredArr);
+    } else {
+      categoriesCtx.setCurrentSubcategoryArr([
+        ...categoriesCtx.currentSubcategoryArr,
+        currSubCat
+      ]);
+    }
   };
 
   const handleSetMainCategory = category => {
