@@ -2,11 +2,11 @@
   "name": "ht-music-library-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./api/index.js",
   "scripts": {
-    "start": "node index.js",
-    "server": "env-cmd ./config/dev.env nodemon index.js",
-    "client": "npm run start --prefix ../client",
+    "start": "node ./api/index.js",
+    "server": "env-cmd ./api/config/dev.env nodemon ./api/index.js",
+    "client": "npm run start --prefix ./client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "engines": {
