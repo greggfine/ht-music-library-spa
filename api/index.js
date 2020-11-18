@@ -1,5 +1,6 @@
 const express = require("express"),
   app = express(),
+  path = require("path"),
   Grid = require("gridfs-stream"),
   mongoose = require("mongoose"),
   Categories = require("./routes/categories");
