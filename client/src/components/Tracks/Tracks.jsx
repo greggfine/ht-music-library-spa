@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Tracks.styles.scss";
 import BootstrapTable from "react-bootstrap-table-next";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import Wave from "../Wave/Wave";
 import columns from "../trackColumnData";
+// import { SearchFieldCtx } from "../SearchFieldProvider";
 
 export default function Tracks({ subcategoryTracks }) {
+  //   let searchFieldCtxFormatted;
+  //   const searchFieldCtx = useContext(SearchFieldCtx);
+  //   if (searchFieldCtx.searchFieldTrackResult) {
+  //     searchFieldCtxFormatted = searchFieldCtx.searchFieldTrackResult[0].filename.replace(
+  //       /_HiddenTigerMusic.mp3/,
+  //       ""
+  //     );
+  //   }
+  //   console.log(searchFieldCtxFormatted); // undefined and string
+
   const [currentTrack, setCurrentTrack] = useState(
     "Fireside_HiddenTigerMusic.mp3"
   );
 
   const rowEvents = {
     onClick: (e, row, rowIndex) => {
+      console.log("clicked!!!");
       setCurrentTrack(`${row.filename}_HiddenTigerMusic.mp3`);
     }
   };
@@ -36,6 +48,11 @@ export default function Tracks({ subcategoryTracks }) {
           hover
           keyField="_id"
           data={firstTenSubcategoryTracks}
+          //   data={[searchFieldCtxFormatted]}
+          //   data={
+          //     // [{ filename: searchFieldCtxFormatted }] || firstTenSubcategoryTracks
+          //     [{ filename: searchFieldCtxFormatted }] || firstTenSubcategoryTracks
+          //   }
           columns={columns}
           rowEvents={rowEvents}
           selectRow={selectRow}

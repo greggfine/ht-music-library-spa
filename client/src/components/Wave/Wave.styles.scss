@@ -2,7 +2,6 @@
   max-width: 90%;
   margin: 0 auto;
   position: relative;
-  //   border: 1px solid #000;
 
   .download-icon {
     color: var(--green3);
@@ -35,5 +34,15 @@
     position: absolute;
     left: 20px;
     top: 15px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Wave {
+    .current-track-title {
+      padding: 10px 20px;
+      letter-spacing: 1px;
+      font-size: 1rem;
+    }
   }
 }

@@ -17,11 +17,20 @@
     &:hover {
       cursor: pointer;
       background-color: var(--tan);
-      //   color: var(--green3);
     }
 
     .icon {
       color: var(--green3);
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .MainCategories {
+    li {
+      padding: 5px 10px;
+      margin-right: 10px;
+      font-size: 1.1rem;
     }
   }
 }

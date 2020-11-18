@@ -15,6 +15,7 @@ const Subcategory = ({
   const handleClose = () => {
     setShow(false);
     toggleShowMoreBtn();
+    console.log("closed");
   };
   const handleShow = () => setShow(true);
 
@@ -34,7 +35,10 @@ const Subcategory = ({
         </li>
         {showMoreBtn && (
           <>
-            <button onClick={handleShow} className="btn btn-success">
+            <button
+              onClick={handleShow}
+              className="btn btn-success show-more-btn"
+            >
               Show more...
             </button>
             {show && (
@@ -43,7 +47,10 @@ const Subcategory = ({
                   <Modal.Title>Select subcategories...</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <Types currentMainCategory={currentMainCategory} />
+                  <Types
+                    currentMainCategory={currentMainCategory}
+                    currentSubCat={subcategoryName}
+                  />
                 </Modal.Body>
                 <Modal.Footer>
                   <Button variant="primary" onClick={handleClose}>

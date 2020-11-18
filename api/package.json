@@ -9,13 +9,20 @@
     "client": "npm run start --prefix ../client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
+  "engines": {
+    "node": "12.18.4",
+    "npm": "6.14.6"
+  },
   "author": "Gregg Fine",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^5.0.2",
-    "env-cmd": "^8.0.2",
     "express": "^4.17.1",
     "gridfs-stream": "^1.1.1",
     "mongoose": "^5.8.6"
+  },
+  "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "node-sass": "^5.0.0"
   }
 }

@@ -6,13 +6,12 @@
 .controls {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-top: 20px;
-  width: 400px;
-  //   padding: 5px 20px;
+  width: 300px;
   box-shadow: 3px 5px 4px 0px#00000047;
   background-color: var(--tan);
-  margin-right: 60px;
+  margin-right: 20px;
+  padding: 10px 0px;
 }
 
 .controls-badge-wrapper {
@@ -25,7 +24,7 @@
 .btn-pause {
   border: 2px solid;
   background-color: #fff;
-  //   margin-left: 20px;
+  margin-left: 15px !important;
   &:hover {
     cursor: pointer;
   }
@@ -42,4 +41,10 @@
   border: 1px solid #000;
   float: right;
   padding: 10px;
+}
+
+@media screen and (max-width: 990px) {
+  .controls-badge-wrapper {
+    flex-direction: column;
+  }
 }

@@ -1,8 +1,5 @@
 node_modules
-api/node_modules
-api/config
 config
-client/node_modules
 mockup-assets
 .prettierrc
 music-library_v2_notes.key
