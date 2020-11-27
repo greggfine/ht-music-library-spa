@@ -7,6 +7,7 @@ html {
 }
 
 body {
+  box-sizing: content-box;
 }
 
 .Container {
@@ -24,5 +25,25 @@ body {
   background-position: right top;
   background-color: #61892f;
   background-blend-mode: screen;
-  height: 100vh;
+  /* height: 100vh; */
+}
+
+.table-bordered {
+  font-size: 0.8rem !important;
+}
+
+th {
+  font-size: 0.6rem;
+  text-align: center !important;
+  padding: 0.9em !important;
+}
+
+@media screen and (min-width: 1000px) {
+  .table-bordered {
+    font-size: 1rem !important;
+  }
+
+  th {
+    font-size: 1rem;
+  }
 }

@@ -23,7 +23,6 @@ export default function Tracks({ subcategoryTracks }) {
 
   const rowEvents = {
     onClick: (e, row, rowIndex) => {
-      console.log("clicked!!!");
       setCurrentTrack(`${row.filename}_HiddenTigerMusic.mp3`);
     }
   };

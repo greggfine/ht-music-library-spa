@@ -1,12 +1,18 @@
 .NavBar {
-  padding-bottom: 10px !important;
-  //   height: 70px;
+  //   padding-bottom: 10px !important;
   .NavBar-logo {
-    margin-left: 100px;
-    width: 40px;
+    width: 50px;
   }
 
   .NavBar-form {
     margin-right: 100px;
   }
+}
+
+.nav-link {
+  font-size: 1.3rem !important;
+}
+
+.navbar-toggler {
+  margin-bottom: 0;
 }

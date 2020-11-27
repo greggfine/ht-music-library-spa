@@ -18,7 +18,6 @@ const TracksHOC = () => {
         ...categoriesCtx.currentSubgenreArr,
         ...categoriesCtx.currentSubcategoryArr
       ];
-      console.log(categoriesAndSubgenres);
       //   const URL = categoriesCtx.currentSubcategoryArr.reduce((accum, genre) => {
       //     return `${accum}${genre}&`;
       //   }, "");
